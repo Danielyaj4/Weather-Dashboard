@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     <link rel="stylesheet" href="./style.css">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <!-- Jumbotron -->
+
+    <div class="Jumbotron text-center container-fluid p-3" style="color:white; 
+    background-color: blue">
+        <h1>Weather Dashboard</h1>
+    </div>
+        <!-- container -->
+        <div class="container">
+            <div class="row">
+                <!-- Left div / col 3 or 4-->
+                <div class="col-sm-4">
+                    <!-- search bar title / lg span -->
+                        <h4 class="m-0 py-3">Search for a City:</h3>
+                    
+                
+                        <!-- search bar -->
+                        <div>
+                    
+                        
+                            <input name="city" id="searchedCity" class="form-control-lg col-12" type="text" placeholder="Minneapolis"/>
+            
+                            <!-- search button -->
+                            <button id="searchBtn" type="submit" class="btn btn-primary my-3 col-12">Search</button>
+                        
+                        </div>
+                        <!-- line break -->
+                        <hr style="height: 2px; border-width: 0; color: gray; background-color: gray">
+                        <!-- search history -->
+
+                    </div>
+                
+                <!-- right div border / col 8 or 9 -->
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="m-3 col-sm-12 border border-dark">
+                          
+                            
+                                                
+                            <!-- current city temp div with border and picture / col  -->
+                            <div id="currentWeather" class="col-sm-12"></div>
+
+                                <!-- city name / lg font span with icon -->
+                                <h3 id="currentCity" class="nameOfCity bold my-2">CITY</h3>
+                                <img id="currentIcon" src="placeholder" alt="">
+                                <!-- Tempurature / row -->
+                                <p>Tempurature: <sapn class="current" id="currentTemp"></sapn></p>
+                                        
+                                <!-- Wind Speed / row-->
+                                <p>Wind Speed: <sapn class="current" id="currentWind"></sapn></p>
+                                
+                                <!-- Humidity / row -->
+                                <p>Humidity: <sapn class="current" id="currentHumidity"></sapn></p>
+                                
+                                <!-- UV Index / row -->
+                                <p>UV Index: <sapn class="current bg-success text-white rounded py-1 px-1" id="currentUvIndex"></sapn></p>
+
+                            </div>
+                        </div>
+                        
+                        <!-- 5 day forcast / col -->          
+                        <div id="futureForecast" class="col-sm-12" >
+                            <h5> 5-Day Forecast</h5>
+                            <div class="row">
+                                <div class="col-sm-2 text-white ml-3 mb-3 p-3 mt-2" style="background-color: rgb(49, 49, 49);">
+                                    <p id="foreDate0"></p>
+                                    <p id="foreIcon0"></p>
+                                    <p>Temp:<span id="foreTemp0"></span></p>
+                                    <p>Wind:<span id="foreWind0"></span></p>
+                                    <p>Humidity:<span id="foreHumidity0"></span></p>
+                                </div>
+                                <div class="col-sm-2 text-white ml-3 mb-3 p-3 mt-2" style="background-color: rgb(49, 49, 49);">
+                                    <p id="foreDate1"></p>
+                                    <p id="foreIcon1"></p>
+                                    <p>Temp:<span id="foreTemp1"></span></p>
+                                    <p>Wind:<span id="foreWind1"></span></p>
+                                    <p>Humidity:<span id="foreHumidity1"></span></p>
+                                </div>
+                                <div class="col-sm-2 text-white ml-3 mb-3 p-3 mt-2" style="background-color: rgb(49, 49, 49);">
+                                    <p id="foreDate2"></p>
+                                    <p id="foreIcon2"></p>
+                                    <p>Temp:<span id="foreTemp2"></span></p>
+                                    <p>Wind:<span id="foreWind2"></span></p>
+                                    <p>Humidity:<span id="foreHumidity2"></span></p>
+                                </div>
+                                <div class="col-sm-2 text-white ml-3 mb-3 p-3 mt-2" style="background-color: rgb(49, 49, 49);">
+                                    <p id="foreDate3"></p>
+                                    <p id="foreIcon3"></p>
+                                    <p>Temp:<span id="foreTemp3"></span></p>
+                                    <p>Wind:<span id="foreWind3"></span></p>
+                                    <p>Humidity:<span id="foreHumidity3"></span></p>
+                                </div>
+                                <div class="col-sm-2 text-white ml-3 mb-3 p-3 mt-2" style="background-color: rgb(49, 49, 49);">
+                                    <p id="foreDate4"></p>
+                                    <p id="foreIcon4"></p>
+                                    <p>Temp:<span id="foreTemp4"></span></p>
+                                    <p>Wind:<span id="foreWind4"></span></p>
+                                    <p>Humidity:<span id="foreHumidity4"></span></p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+    <script src="./script.js"></script>
+
+    <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+    ></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
